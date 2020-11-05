@@ -1,0 +1,6 @@
+Hola Victor o Marcos, el error del código es porque mi funcion de Naive hice algo mal ajjaaj fue algo tonto de quere cambiar sólo un valor del string de una forma incorrecta,
+entonces, cuando se realiza el post, sale un error en localhost:5000/han, pero si en quita el han localhost:5000/, entonces, lo regresara al index y saldrá todo menos todo aquello
+está por debajo de Naive, que son eso y lower y upper. Entonces, con que quiten la poarte donde le hacemos el Listado.append(Naive(han)) si quitan eso, y lo corren el programa ya funciona
+no cambiaré nada, porque está vinculado va y no hare el commit, más que sólo este para explicar el problema. 
+
+Gracias, Carlos Alvarado.
