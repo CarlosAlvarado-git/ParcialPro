@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block resto %}
+    <body>
+        <center><h1>Handler</h1>
+        <ol>
+            <li>Reverse: {{lista[0]}}</li>
+            <li>Length: {{lista[1]}}</li>
+            <li>Vowels: {{lista[2]}}</li>
+            <li>Consonants: {{lista[3]}}</li>
+            <li>UpDown: {{lista[4]}}</li>
+            <li>Naive: {{lista[5]}}</li>
+            <li>Lower: {{lista[6]}}</li>
+            <li>Upper: {{lista[7]}}</li>
+        </ol>
+        <a class="btn btn-primary" href="/hand" role="button">HANDLER</a>
+    </center>
+    </body>
+{% endblock %}
+{% block body %}
+  {{ super() }} 
+{% endblock %}

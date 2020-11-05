@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}Formulario{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block resto %}
+<body>
+    <h2>
+        <form method="POST" action="">
+            <div class="form-group">
+                <input type="text" class="form-control" name="han" placeholder="String">
+            </div>
+            <button type="submit" class="btn btn-primary">Handle</button>
+        </form>
+    </h2>
+    
+</body>
+{% endblock %}
+{% block body %}
+  {{ super() }} 
+{% endblock %}
