@@ -3,5 +3,5 @@ entonces, cuando se realiza el post, sale un error en localhost:5000/han, pero s
 está por debajo de Naive, que son eso y lower y upper. Entonces, con que quiten la poarte donde le hacemos el Listado.append(Naive(han)) si quitan eso, y lo corren el programa ya funciona
 no cambiaré nada, porque está vinculado va y no hare el commit, más que sólo este para explicar el problema. 
 Tambien tristemente me acabo de dar cuenta que hice la variable listado global, y sólo agrego los valor, por lo que se genera una gran lista y no sale lo nuevo. antes de hacer
-listado.append, de debe volver a vaciar la variable, listado = []
+listado.append, de debe volver a vaciar la variable, listado[:] = []
 Gracias, Carlos Alvarado.
