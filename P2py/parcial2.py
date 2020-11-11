@@ -4,63 +4,46 @@ File_loader = FileSystemLoader("carp")
 env = Environment(loader=File_loader)
 app = Flask(__name__)
 def UpDown(palabra):
+    nuevapal = ""
     for i in range(len(palabra)):
-        if((i % 2) != 0):
-            palabra[i].upper()
+        letra = palabra[i]
+        if( i % 2 == 0):
+            nuevapal = nuevapal + letra.upper()
         else:
-            palabra[i].lower()
-    return palabra
+            nuevapal = nuevapal + letra.lower()
+    
+    return nuevapal
 def Naive(palabra):
-    palabra.lower()
-    for i in range(5):
-        for y in range(len(palabra)):
-            if(i == 0):
-                y = palabra.find("a", y)
-                if( y != 1):
-                    palabra[y] = "@"
-                    y = y + 1 
-            if(i == 1):
-                y = palabra.find("e", y)
-                if( y != 1):
-                    palabra[y] = "3"
-                    y = y + 1
-            if(i == 2):
-                y = palabra.find("i", y)
-                if( y != 1):
-                    palabra[y] = "!"
-                    y = y + 1
-            if(i==3):
-                y = palabra.find("o", y)
-                if( y != 1):
-                    palabra[y] = "0"
-                    y = y + 1
-            if(i==4):
-                y = palabra.find("u", y)
-                if( y != 1):
-                    palabra[y] = ")"
-                    y = y + 1
-    return palabra   
+    palabra = palabra.lower()
+    palabra = palabra.replace("a", "@").replace("e", "3").replace("i", "!").replace("o", "0").replace("u", ")")
+    return palabra
+     
 def vowel(palabra):
-    palabra.lower()
+    palabra = palabra.lower()
     count = 0
     for y in range(len(palabra)):
         if(palabra[y] == "a" or palabra[y] == "e" or palabra[y] == "i" or palabra[y] == "o" or palabra[y] == "u"):
             count = count + 1
     return count
 def cons(palabra):
-    palabra.lower()
+    palabra = palabra.lower()
+    palabra = palabra.replace(" ", "")
     count = 0
     for y in range(len(palabra)):
-        if(palabra[y] != "a" or palabra[y] != "e" or palabra[y] != "i" or palabra[y] != "o" or palabra[y] != "u"):
+        if(palabra[y] == "a" or palabra[y] == "e" or palabra[y] == "i" or palabra[y] == "o" or palabra[y] == "u" or palabra[y] == "-" or palabra[y] == "."):
+            pass
+        else:
             count = count + 1
     return count
 listado = []
 @app.route('/hand', methods=["GET", "POST"])
 def hand():  
+    listado[:] = []
     if request.method == 'POST':
         han = request.form['han']
+        listado.append(han)
         listado.append(han[::-1])
-        listado.append(len(han))
+        listado.append(len(han.replace(" ", "")))
         listado.append(vowel(han))
         listado.append(cons(han))
         listado.append(UpDown(han))
